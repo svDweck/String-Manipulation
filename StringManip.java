@@ -79,4 +79,41 @@ public class StringManip {
         return count;
     }
 
+    // Returns the most common character in a string
+    public char mostCommonChar(String str) {
+
+        // Creates a hashmap to keep track of the individual characters in the string
+        HashMap<Character, Integer> chars = new HashMap<>();
+
+        // The letter count to keep track of
+        int count = 0;
+
+        // The most common character to return
+        char mostcommon = ' ';
+
+        // Checks for an empty string and returns 0 if string is empty
+        if(str.length() == 0|| (str.length() == 1 && str.charAt(0) == ' ')){
+            return 0;
+        }
+
+        // Goes through the string and counts how many of its characters occur using the hashmap
+        for(int i=0; i<str.length(); i++){
+            if(!chars.containsKey(str.charAt(i))&&str.charAt(i) != ' '){
+                chars.put(str.charAt(i), 1);
+            }else if(str.charAt(i) != ' '){
+                chars.put(str.charAt(i), chars.get(str.charAt(i)) + 1);
+            }
+        }
+
+        // Goes through the counts of the letters to see which occurs the most often
+        for(HashMap.Entry<Character, Integer> i : chars.entrySet()){
+            if(i.getValue() > count){
+                count = i.getValue();
+                mostcommon = i.getKey();
+            }
+        }
+
+        return mostcommon;
+    }
+
 }
