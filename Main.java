@@ -17,9 +17,9 @@ public class Main {
 
         // Prints the available options for string manipulations
         System.out.println("What would you like to do with your sentence?");
-        System.out.println("1: Reverse it!\n2: Alphabetize it!\n3: Count the letters!\n4: Count the words!");
+        System.out.println("1: Reverse it!\n2: Alphabetize it!\n3: Count the letters!\n4: Count the words!\n5: Find the most common letter!");
 
-        // Determines which option the user selects, and executes the chosen methody
+        // Determines which option the user selects, and executes the chosen method
         switch(scanner.nextInt()){
             case 1:
                 System.out.println("Here is your reversed sentence:\n" +
@@ -30,12 +30,15 @@ public class Main {
                         manipulate.alphabetize(toManip));
                 break;
             case 3:
-                System.out.println("Here is the letter count of your sentence:\n" +
+                System.out.println("Here is the letter count of your sentence: " +
                         manipulate.letterCount(toManip));
                 break;
             case 4:
-                System.out.println("Here is the word count of your sentence:\n" +
+                System.out.println("Here is the word count of your sentence: " +
                         manipulate.wordCount(toManip));
+                break;
+            case 5:
+                System.out.println("The letter that occurs the most in your sentence is: " + manipulate.mostCommonChar(toManip));
                 break;
 
             default:
