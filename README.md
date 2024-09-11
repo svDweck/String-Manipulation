@@ -1,2 +1,2 @@
 # String-Manipulation
-Allows the user to manipulate an inputted sentence in various ways.
+Allows the user to manipulate an inputted sentence in various ways. The class StringManip contains several methods that deal with strings in various way. The reverse() method completely reverses a string by it's characters. The alphabetize() method alphabetically sorts a string's individual words. The letterCount() and wordCount methods count the amount of letters and words in the inputted string.
